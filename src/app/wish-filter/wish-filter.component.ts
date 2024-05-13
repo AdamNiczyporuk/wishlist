@@ -1,4 +1,4 @@
-import { Component,OnInit,Input,Output,EventEmitter, input} from '@angular/core';
+import { Component,OnInit,Input,Output,EventEmitter} from '@angular/core';
 import { WishItem } from '../../Shared/models/wishitem';
 
 
@@ -26,6 +26,6 @@ export class WishFilterComponent implements OnInit{
 
   updateFilter(value :any){
     this.filter=filters[value];
-    this.filter.emit(this.filter);
+    this.filterChange.emit(this.filter);
   }
 }
