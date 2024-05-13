@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { WishItem } from '../Shared/models/wishitem';
-
+import events from './../Shared/services/EventServices';
 
 
 
@@ -15,7 +15,12 @@ export class AppComponent {
     new WishItem('To find cause',true),
     new WishItem('To find Money on the ground'),
   ]
+  constructor() {
+    events.listen('removeWish',(wish:any) =>{
+      console.log(wish);
+    })
 
+  } 
  filter :any;
 
 }
